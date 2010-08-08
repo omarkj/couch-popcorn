@@ -1,7 +1,7 @@
 {
   "env": { 
     "default": {
-      "db": "http://omarkj:ntovrp@localhost:5984/popcorn-dev"
+      "db": "http://omarkj:omarkj@localhost:5984/popcorn-dev"
     }
   }
 }
