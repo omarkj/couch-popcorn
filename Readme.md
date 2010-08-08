@@ -6,6 +6,5 @@ The look is borrowed from Ryshcate. - http://bitbucket.org/leafstorm/ryshcate/
 
 ### Todo
 
-Catch the output from Google Prettifyer and save the output to CouchDB.
-Tags
-Use CouchApp.
+* Catch the output from Google Prettifyer and save the output to CouchDB.
+* Tags
