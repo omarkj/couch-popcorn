@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popcorn: New Paste</title>
+    <meta charset="utf-8" /> 
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../style/main.css" type="text/css">
+	<link rel="stylesheet" href="../style/highlight.css" type="text/css">
+</head> 
+<body> 
+  <div class="container">
+{{>header}}
+  
+    <div class="content">
+      <form id="new-paste" method="post">
+        <h2>New Paste</h2>
+        <p> 
+          <label for="title">Title</label>: <input id="title" maxlength="64" name="title" type="text"/> <span class="fielddesc">(A title for the paste.)</span> 
+        </p>
+        <p> 
+          <label for="code">Code</label>: <span class="fielddesc">(The paste&#39;s source code.)</span><br> 
+          <textarea class="code" id="code" name="code" rows="20"></textarea> 
+        </p>
+    
+        <p>
+          <label for="language">Language</label>: <select id="language" name="language"><option value="abap">ABAP</option><option value="ada">Ada</option><option value="antlr">ANTLR</option><option value="antlr-as">ANTLR With ActionScript Target</option><option value="antlr-cpp">ANTLR With CPP Target</option><option value="antlr-csharp">ANTLR With C# Target</option><option value="antlr-java">ANTLR With Java Target</option><option value="antlr-objc">ANTLR With ObjectiveC Target</option><option value="antlr-perl">ANTLR With Perl Target</option><option value="antlr-python">ANTLR With Python Target</option><option value="antlr-ruby">ANTLR With Ruby Target</option><option value="apacheconf">ApacheConf</option><option value="applescript">AppleScript</option><option value="as">ActionScript</option><option value="as3">ActionScript 3</option><option value="aspx-cs">aspx-cs</option><option value="aspx-vb">aspx-vb</option><option value="asy">Asymptote</option><option value="basemake">Makefile</option><option value="bash">Bash</option><option value="bat">Batchfile</option><option value="bbcode">BBCode</option><option value="befunge">Befunge</option><option value="bf">Brainf---</option><option value="boo">Boo</option><option value="c">C</option><option value="c-objdump">c-objdump</option><option value="cfm">Coldufsion HTML</option><option value="cfs">cfstatement</option><option value="cheetah">Cheetah</option><option value="clojure">Clojure</option><option value="cmake">CMake</option><option value="coffee-script">CoffeeScript</option><option value="common-lisp">Common Lisp</option><option value="console">Bash Session</option><option value="control">Debian Control file</option><option value="cpp">C++</option><option value="cpp-objdump">cpp-objdump</option><option value="csharp">C#</option><option value="css">CSS</option><option value="css+django">CSS+Django/Jinja</option><option value="css+erb">CSS+Ruby</option><option value="css+genshitext">CSS+Genshi Text</option><option value="css+mako">CSS+Mako</option><option value="css+myghty">CSS+Myghty</option><option value="css+php">CSS+PHP</option><option value="css+smarty">CSS+Smarty</option><option value="Cucumber">Gherkin</option><option value="cython">Cython</option><option value="d">D</option><option value="d-objdump">d-objdump</option><option value="delphi">Delphi</option><option value="diff">Diff</option><option value="django">Django/Jinja</option><option value="dpatch">Darcs Patch</option><option value="dylan">Dylan</option><option value="erb">ERB</option><option value="erl">Erlang erl session</option><option value="erlang">Erlang</option><option value="evoque">Evoque</option><option value="felix">Felix</option><option value="fortran">Fortran</option><option value="gas">GAS</option><option value="genshi">Genshi</option><option value="genshitext">Genshi Text</option><option value="glsl">GLSL</option><option value="gnuplot">Gnuplot</option><option value="go">Go</option><option value="groff">Groff</option><option value="haml">Haml</option><option value="haskell">Haskell</option><option value="html">HTML</option><option value="html+cheetah">HTML+Cheetah</option><option value="html+django">HTML+Django/Jinja</option><option value="html+evoque">HTML+Evoque</option><option value="html+genshi">HTML+Genshi</option><option value="html+mako">HTML+Mako</option><option value="html+myghty">HTML+Myghty</option><option value="html+php">HTML+PHP</option><option value="html+smarty">HTML+Smarty</option><option value="hx">haXe</option><option value="ini">INI</option><option value="io">Io</option><option value="irc">IRC logs</option><option value="java">Java</option><option value="js">JavaScript</option><option value="js+cheetah">JavaScript+Cheetah</option><option value="js+django">JavaScript+Django/Jinja</option><option value="js+erb">JavaScript+Ruby</option><option value="js+genshitext">JavaScript+Genshi Text</option><option value="js+mako">JavaScript+Mako</option><option value="js+myghty">JavaScript+Myghty</option><option value="js+php">JavaScript+PHP</option><option value="js+smarty">JavaScript+Smarty</option><option value="jsp">Java Server Page</option><option value="lhs">Literate Haskell</option><option value="lighty">Lighttpd configuration file</option><option value="llvm">LLVM</option><option value="logtalk">Logtalk</option><option value="lua">Lua</option><option value="make">Makefile</option><option value="mako">Mako</option><option value="matlab">Matlab</option><option value="matlabsession">Matlab session</option><option value="minid">MiniD</option><option value="modelica">Modelica</option><option value="modula2">Modula-2</option><option value="moocode">MOOCode</option><option value="mupad">MuPAD</option><option value="mxml">MXML</option><option value="myghty">Myghty</option><option value="mysql">MySQL</option><option value="nasm">NASM</option><option value="newspeak">Newspeak</option><option value="nginx">Nginx configuration file</option><option value="numpy">NumPy</option><option value="objdump">objdump</option><option value="objective-c">Objective-C</option><option value="objective-j">Objective-J</option><option value="ocaml">OCaml</option><option value="ooc">Ooc</option><option value="perl">Perl</option><option value="php">PHP</option><option value="pot">Gettext Catalog</option><option value="pov">POVRay</option><option value="prolog">Prolog</option><option value="py3tb">Python 3.0 Traceback</option><option value="pycon">Python console session</option><option value="pytb">Python Traceback</option><option value="python">Python</option><option value="python3">Python 3</option><option value="ragel">Ragel</option><option value="ragel-c">Ragel in C Host</option><option value="ragel-cpp">Ragel in CPP Host</option><option value="ragel-d">Ragel in D Host</option><option value="ragel-em">Embedded Ragel</option><option value="ragel-java">Ragel in Java Host</option><option value="ragel-objc">Ragel in Objective C Host</option><option value="ragel-ruby">Ragel in Ruby Host</option><option value="raw">Raw token data</option><option value="rb">Ruby</option><option value="rbcon">Ruby irb session</option><option value="rconsole">RConsole</option><option value="rebol">REBOL</option><option value="redcode">Redcode</option><option value="rhtml">RHTML</option><option value="rst">reStructuredText</option><option value="sass">Sass</option><option value="scala">Scala</option><option value="scheme">Scheme</option><option value="smalltalk">Smalltalk</option><option value="smarty">Smarty</option><option value="sourceslist">Debian Sourcelist</option><option value="splus">S</option><option value="sql">SQL</option><option value="sqlite3">sqlite3con</option><option value="squidconf">SquidConf</option><option value="tcl">Tcl</option><option value="tcsh">Tcsh</option><option value="tex">TeX</option><option selected="selected" value="text">Text only</option><option value="trac-wiki">MoinMoin/Trac Wiki markup</option><option value="vala">Vala</option><option value="vb.net">VB.net</option><option value="vim">VimL</option><option value="xml">XML</option><option value="xml+cheetah">XML+Cheetah</option><option value="xml+django">XML+Django/Jinja</option><option value="xml+erb">XML+Ruby</option><option value="xml+evoque">XML+Evoque</option><option value="xml+mako">XML+Mako</option><option value="xml+myghty">XML+Myghty</option><option value="xml+php">XML+PHP</option><option value="xml+smarty">XML+Smarty</option><option value="xslt">XSLT</option><option value="yaml">YAML</option></select> <span class="fielddesc">(The language this paste is in.)</span> 
+        </p>
+    
+        <p>
+          <label for="tags">Tags</label>: <input id="tags" name="tags" type="text" />
+          <span class="fielddesc">(A comma-separated list of tags.)</span> 
+        </p> 
+        <p>
+          <input id="private" name="private" type="checkbox" value="y" />
+          <label for="private">Private</label>
+          <span class="fielddesc">(Check this if the paste should not be listed publicly.)</span> 
+        </p>
+        <p>
+          <input type="button" id="create" value="Create Paste" />
+        </p>
+      </form>
+    </div>
+    {{>footer}}
+  </div> 
+</body>
+<script src="/_utils/script/json2.js"></script>
+<script src="/_utils/script/jquery.js"></script>
+<script src="/_utils/script/jquery.couch.js"></script>
+<script src="../vendor/google-prettify/prettify.js"></script>
+<link rel="stylesheet" href="../vendor/google-prettify/prettify.css" type="text/css">
+<script src="../vendor/couchapp/jquery.couch.app.js"></script>
+<script src="../vendor/couchapp/jquery.couch.app.util.js"></script>
+<script src="../vendor/couchapp/jquery.evently.js"></script>
+<script type="text/javascript">
+  $('form#new-paste input#create').click(function() {
+    
+    var form = $('form#new-paste');
+    var s_form = form.serializeArray();
+    var data = {};
+    for (var i=0; i<s_form.length; i++) {
+      data[s_form[i].name] = s_form[i].value;
+    }
+    
+    var d_tags = [];
+    if(data.tags) {
+      data.tags = data.tags.split(",");
+      for(var idx in data.tags) {
+        d_tags[idx] = $.trim(data.tags[idx]);
+      }
+    }
+    
+    var doc = {
+      title: data.title,
+      type: 'Paste',
+      code: data.code,
+      language: data.language,
+      tags: d_tags,
+      private: data.private
+    };
+    
+    $.ajax( {
+      type : "POST",
+      url : "../../../",
+      contentType : "application/json",
+      data : JSON.stringify(doc),
+      success : function(msg) {
+        window.location.replace("paste/" + $.parseJSON(msg).id);
+      }
+    });
+  });
+</script>
+</html>
