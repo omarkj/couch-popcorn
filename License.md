@@ -1,6 +1,6 @@
 # License
 
-## Copyright (c) 2010 Omar Yasin
+Copyright (c) 2010 Omar Yasin
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
