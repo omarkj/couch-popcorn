@@ -7,6 +7,7 @@ function(doc, req) {
   var Config = require("config").config;
   var template = t_doc.templates.paste;
   var partials = t_doc.templates.partials;
+  
   return Mustache.to_html(template,{
     header: {
       PageTitle: Config.Title

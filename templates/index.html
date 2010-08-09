@@ -45,14 +45,9 @@
     {{>footer}}
   </div> 
 </body>
-<script src="/_utils/script/json2.js"></script>
 <script src="/_utils/script/jquery.js"></script>
-<script src="/_utils/script/jquery.couch.js"></script>
 <script src="../vendor/google-prettify/prettify.js"></script>
 <link rel="stylesheet" href="../vendor/google-prettify/prettify.css" type="text/css">
-<script src="../vendor/couchapp/jquery.couch.app.js"></script>
-<script src="../vendor/couchapp/jquery.couch.app.util.js"></script>
-<script src="../vendor/couchapp/jquery.evently.js"></script>
 <script type="text/javascript">
   $('form#new-paste input#create').click(function() {
     
@@ -77,7 +72,8 @@
       code: data.code,
       language: data.language,
       tags: d_tags,
-      private: data.private
+      private: data.private,
+      date: new Date()
     };
     
     $.ajax( {

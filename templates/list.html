@@ -12,24 +12,18 @@
 <body> 
   <div class="container">
 {{>header}}
-  
     <div class="content">
-
-        <h2>All Pastes</h2> 
-
+        <h2>All Pastes</h2>
         <ul class="pastes">
-          {{#Pastes}} 
+          {{#Pastes}}
             <li>
-                <strong><a href="/paste/{{id}}">{{Name}}</a></strong> 
-                [<a href="/language/{{Language}}">{{Language}}</a>]<br> 
-                Created {{Created}};
-                Tags:
-                {{#Tags}}{{tag}}{{/Tags}}
+                <strong><a href="../../_show/paste/{{id}}">{{title}}</a></strong> 
+                [<a href="/language/{{language}}">{{language}}</a>]<br />
+                Created at {{date}};<br />
+                Tags: {{#tags}}{{.}}, {{/tags}}
             </li>
             {{/Pastes}}
         </ul> 
-
-
     </div>
     {{>footer}}
   </div> 

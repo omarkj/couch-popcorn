@@ -17,10 +17,10 @@
       <h2>{{Title}} [{{Language}}]</h2> 
 
       <p> Tags:
-        {{#Tags}}{{tag}}{{/Tags}} 
+        {{#Tags}}{{.}}{{/Tags}} 
       </p> 
 
-      <p>Created {{Created}}</p> 
+      <p>Created {{#date}} {{day}}. {{month}} {{year}} at {{hour}}:{{minutes}} {{/date}}</p> 
       
       <div class="code">
         <pre class="prettyprint">{{Code}}</pre>
@@ -29,4 +29,6 @@
     {{>footer}}
   </div> 
 </body>
+<script src="../../vendor/google-prettify/prettify.js"></script>
+<link rel="stylesheet" href="../../vendor/google-prettify/prettify.css" type="text/css">
 </html>
