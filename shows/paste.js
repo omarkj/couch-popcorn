@@ -10,7 +10,8 @@ function(doc, req) {
   
   return Mustache.to_html(template,{
     header: {
-      PageTitle: Config.Title
+      PageTitle: Config.Title,
+      DatabaseName: Config.DatabaseName
     },
     footer: {
       FooterCopyright: Config.Footer.Copyright
