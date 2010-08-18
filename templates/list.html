@@ -20,9 +20,10 @@
                 <strong><a href="../../_show/paste/{{id}}">{{title}}</a></strong> 
                 [<a href="/language/{{language}}">{{language}}</a>]<br />
                 Created at {{date}};<br />
-                Tags: {{#tags}}{{.}}, {{/tags}}
+					{{#hasTags}}Tags: {{#tags}}{{.}}, {{/tags}}{{/hasTags}}
+					{{^hasTags}}Not tagged{{/hasTags}}
             </li>
-            {{/Pastes}}
+			{{/Pastes}}
         </ul> 
     </div>
     {{>footer}}
