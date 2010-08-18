@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popcorn: All Pastes</title>
+    <meta charset="utf-8" /> 
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../../style/main.css" type="text/css">
+	<link rel="stylesheet" href="../../style/highlight.css" type="text/css">
+</head> 
+<body> 
+  <div class="container">
+{{>header}}
+    <div class="content">
+        <h2>All Pastes</h2>
+        <ul>
+          {{#Results}}
+            <li>
+					<a href="/{{Title}}">{{Title}}</a> ({{Count}} paste)
+            </li>
+			{{/Results}}
+        </ul> 
+    </div>
+    {{>footer}}
+  </div> 
+</body>
+</html>
