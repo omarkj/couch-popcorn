@@ -1,0 +1,54 @@
+[
+  {
+    "to": "_list/paste/all",
+    "from": "/all",
+    "method": "GET",
+    "query": {
+      "reduce": false,
+      "page": "all"
+    }
+  },
+  {
+    "to": "_list/count/languages",
+    "from": "/languages",
+    "method": "GET",
+    "query": {
+      "group": true,
+      "page": "languages"
+    }
+  },
+  {
+    "to": "_list/paste/language",
+    "from": "/languages/:language",
+    "method": "GET",
+    "query": {
+      "reduce": false,
+      "key": ":language",
+      "page": "language"
+    }
+  },
+  {
+    "to": "_list/count/tags",
+    "from": "/tags",
+    "method": "GET",
+    "query": {
+      "group": true,
+      "page": "tags"
+    }
+  },
+  {
+    "to": "_list/paste/tag",
+    "from": "/tags/:tag",
+    "method": "GET",
+    "query": {
+      "reduce": false,
+      "key": ":tag",
+      "page": "tag"
+    }
+  },
+  {
+    "to": "_show/paste/:guid",
+    "from": "/paste/:guid",
+    "method": "GET"
+  }
+]

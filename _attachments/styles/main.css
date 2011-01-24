@@ -1,0 +1,91 @@
+/* Page layout */
+body {
+    color: black;
+    background-color: white;
+    font-family: 'Liberation Serif', 'Georgia', serif;
+    font-size: 1.1em;
+}
+.container {
+    width: 700px;
+    margin: 20px auto;
+}
+header {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.4em;
+    color: #430;
+}
+header h1 {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+footer {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 0.9em;
+    font-color: #444;
+}
+nav {
+    text-align: right;
+}
+nav a {
+    text-decoration: none;
+}
+
+/* Text formatting */
+a {
+    color: #972;
+}
+a:visited {
+    color: #641;
+}
+/*code, pre, textarea.code {
+    font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono',
+    'Bitstream Vera Sans Mono', monospace !important;
+}*/
+pre {
+    line-height: 1.25;
+}
+span.fielddesc {
+    color: #888;
+    font-size: smaller;
+}
+
+textarea.code {
+    width: 100%;
+    font-size: 0.9em;
+}
+
+/* Highlights */
+.highlighttable {
+    font-size: 0.8em;
+    border: 1px solid black;
+    width: 100%;
+}
+.highlighttable td.linenos {
+    padding-right: 12px;
+    background-color: #ddb;
+}
+
+
+/* Flashes */
+section#flashes {
+    margin: 8px auto;
+}
+p.flash {
+    margin: 2px;
+    padding: 4px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.messageflash {
+    background-color: #ff9;
+}
+.errorflash {
+    background-color: #fcc;
+}
+.successflash {
+    background-color: #cfc;
+}

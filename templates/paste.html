@@ -5,14 +5,24 @@
       </p> 
       <p>Created {{Created}}</p> 
       <div class="code">
-        <code class="prettyprint linenums:4">{{Code}}</code>
+        <code class="prettyprint linenums:1">{{Code}}</code>
       </div>
 <script src="/_utils/script/jquery.js"></script>
 <script src="{{DocPath}}/vendor/google-prettify/prettify.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	$("code").html($("code").html().replace(/\n/g,"<br/>"));
-	prettyPrint();
+	var code = $("code");
+	code.html(code.html().replace(/\n/g,"<br/>"));
+	prettyPrint(function() {
+		var line_highlight = {{line_highlight}};
+		if (line_highlight.length > 0) {
+			line_highlight.forEach(function(l) {
+				try {
+					var a = $("li:nth-child("+l+")", code).css("background", "rgb(200,200,200)");
+				} catch(err) {}
+			});
+		}
+	});
 });
 </script>
 <link rel="stylesheet" href="{{DocPath}}/vendor/google-prettify/prettify.css" type="text/css">
