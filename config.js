@@ -1,7 +1,6 @@
 exports.config =
 {
-  Title: "Popcorn",
-  DatabaseName: "popcorn-dev",
+  DocPath: "/popcorn/_design/Popcorn",
   Footer: {
     Copyright: "omarkj"
   }

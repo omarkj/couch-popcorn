@@ -10,11 +10,12 @@ function(head, req) {
   
   return Mustache.to_html(template,{
     header: {
-      PageTitle: Config.Title,
-      DatabaseName: Config.DatabaseName
+      PageTitle: "New Paste",
+      DocPath: Config.DocPath
     },
     footer: {
       FooterCopyright: Config.Footer.Copyright
-    }
+    },
+    DocPath: Config.DocPath
   },partials);
 };

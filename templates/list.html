@@ -1,32 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Popcorn: All Pastes</title>
-    <meta charset="utf-8" /> 
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" href="../../style/main.css" type="text/css">
-	<link rel="stylesheet" href="../../style/highlight.css" type="text/css">
-</head> 
-<body> 
-  <div class="container">
 {{>header}}
-    <div class="content">
-        <h2>All Pastes</h2>
         <ul class="pastes">
           {{#Pastes}}
             <li>
-                <strong><a href="../../_show/paste/{{id}}">{{title}}</a></strong> 
-                [<a href="/language/{{language}}">{{language}}</a>]<br />
+                <strong><a href="{{DocPath}}/_rewrite/paste/{{id}}">{{title}}</a></strong> 
+                [<a href='{{DocPath}}/_rewrite/languages/"{{language}}"'>{{language}}</a>]<br />
                 Created at {{date}};<br />
-					{{#hasTags}}Tags: {{#tags}}{{.}}, {{/tags}}{{/hasTags}}
+					{{#hasTags}}Tags: {{#tags}}
+						<a href='{{DocPath}}/_rewrite/tags/"{{.}}"'>{{.}}</a> 
+					{{/tags}}{{/hasTags}}
 					{{^hasTags}}Not tagged{{/hasTags}}
             </li>
 			{{/Pastes}}
-        </ul> 
-    </div>
-    {{>footer}}
-  </div> 
-</body>
-</html>
+{{>footer}}

@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Popcorn: New Paste</title>
-    <meta charset="utf-8" /> 
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" href="../style/main.css" type="text/css">
-	<link rel="stylesheet" href="../style/highlight.css" type="text/css">
-</head> 
-<body> 
-  <div class="container">
 {{>header}}
-  
-    <div class="content">
-      <form id="new-paste" method="post">
-        <h2>New Paste</h2>
+		<form id="new-paste" method="post">
         <p> 
           <label for="title">Title</label>: <input id="title" maxlength="64" name="title" type="text"/> <span class="fielddesc">(A title for the paste.)</span> 
         </p>
@@ -41,50 +25,44 @@
           <input type="button" id="create" value="Create Paste" />
         </p>
       </form>
-    </div>
-    {{>footer}}
-  </div> 
-</body>
-<script src="/_utils/script/jquery.js"></script>
-<script src="../vendor/google-prettify/prettify.js"></script>
-<link rel="stylesheet" href="../vendor/google-prettify/prettify.css" type="text/css">
-<script type="text/javascript">
-  $('form#new-paste input#create').click(function() {
-    
-    var form = $('form#new-paste');
-    var s_form = form.serializeArray();
-    var data = {};
-    for (var i=0; i<s_form.length; i++) {
-      data[s_form[i].name] = s_form[i].value;
-    }
-    
-    var d_tags = [];
-    if(data.tags) {
-      data.tags = data.tags.split(",");
-      for(var idx in data.tags) {
-        d_tags[idx] = $.trim(data.tags[idx]);
-      }
-    }
-    
-    var doc = {
-      title: data.title,
-      type: 'Paste',
-      code: data.code,
-      language: data.language,
-      tags: d_tags,
-      private: data.private,
-      date: new Date()
-    };
-    
-    $.ajax( {
-      type : "POST",
-      url : "../../../",
-      contentType : "application/json",
-      data : JSON.stringify(doc),
-      success : function(msg) {
-        window.location.replace("paste/" + $.parseJSON(msg).id);
-      }
-    });
-  });
-</script>
-</html>
+		<script src="/_utils/script/jquery.js"></script>
+		<script type="text/javascript">
+		  $('form#new-paste input#create').click(function() {
+
+		    var form = $('form#new-paste');
+		    var s_form = form.serializeArray();
+		    var data = {};
+		    for (var i=0; i<s_form.length; i++) {
+		      data[s_form[i].name] = s_form[i].value;
+		    }
+
+		    var d_tags = [];
+		    if(data.tags) {
+		      data.tags = data.tags.split(",");
+		      for(var idx in data.tags) {
+		        d_tags[idx] = $.trim(data.tags[idx]);
+		      }
+		    }
+
+		    var doc = {
+		      title: data.title,
+		      type: 'Paste',
+		      code: data.code,
+		      language: data.language,
+		      tags: d_tags,
+		      private: data.private,
+		      date: new Date()
+		    };
+
+		    $.ajax( {
+		      type : "POST",
+		      url : "../../../",
+		      contentType : "application/json",
+		      data : JSON.stringify(doc),
+		      success : function(msg) {
+		        window.location.replace("{{DocPath}}/_rewrite/paste/" + $.parseJSON(msg).id);
+		      }
+		    });
+		  });
+		</script>
+{{>footer}}

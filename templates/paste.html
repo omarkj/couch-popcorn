@@ -1,34 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Popcorn: {{Title}}</title>
-    <meta charset="utf-8" /> 
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" href="../../style/main.css" type="text/css">
-	<link rel="stylesheet" href="../../style/highlight.css" type="text/css">
-</head> 
-<body> 
-  <div class="container">
 {{>header}}
-  
-    <div class="content">
-      <h2>{{Title}} [{{Language}}]</h2> 
-
-      <p> Tags:
-        {{#Tags}}{{.}}{{/Tags}} 
+      <p>{{#hasTags}}Tags: {{#tags}}
+				<a href='{{DocPath}}/_rewrite/tags/"{{.}}"'>{{.}}</a> 
+			{{/tags}}{{/hasTags}}
       </p> 
-
-      <p>Created {{#date}} {{day}}. {{month}} {{year}} at {{hour}}:{{minutes}} {{/date}}</p> 
-      
+      <p>Created {{Created}}</p> 
       <div class="code">
-        <pre class="prettyprint">{{Code}}</pre>
+        <code class="prettyprint linenums:4">{{Code}}</code>
       </div>
-    </div>
-    {{>footer}}
-  </div> 
-</body>
-<script src="../../vendor/google-prettify/prettify.js"></script>
-<link rel="stylesheet" href="../../vendor/google-prettify/prettify.css" type="text/css">
-</html>
+<script src="/_utils/script/jquery.js"></script>
+<script src="{{DocPath}}/vendor/google-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("code").html($("code").html().replace(/\n/g,"<br/>"));
+	prettyPrint();
+});
+</script>
+<link rel="stylesheet" href="{{DocPath}}/vendor/google-prettify/prettify.css" type="text/css">
+{{>footer}}

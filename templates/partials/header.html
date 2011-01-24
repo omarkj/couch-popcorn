@@ -1,10 +1,25 @@
-<header> 
-  <h1>{{PageTitle}}</h1> 
-</header> 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popcorn: {{PageTitle}}</title>
+    <meta charset="utf-8" /> 
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/popcorn/_design/Popcorn/styles/main.css" type="text/css">
+</head> 
+<body> 
+  <div class="container">
+		<header> 
+		  <h1>Popcorn</h1> 
+		</header> 
 
-<nav> 
-  <a href="/{{DatabaseName}}/_design/Popcorn/_show/index">New</a> | 
-  <a href="/{{DatabaseName}}/_design/Popcorn/_list/paste/all">All</a> | 
-  <a href="/{{DatabaseName}}/_design/Popcorn/_list/count/languages?group=true">Languages</a> | 
-  <a href="/{{DatabaseName}}/_design/Popcorn/_list/count/tags?group=true">Tags</a>
-</nav>
+		<nav> 
+		  <a href="{{DocPath}}/_show/index">New</a> | 
+		  <a href="{{DocPath}}/_rewrite/all">All</a> | 
+		  <a href="{{DocPath}}/_rewrite/languages">Languages</a> | 
+		  <a href="{{DocPath}}/_rewrite/tags">Tags</a>
+		</nav>
+		
+		<div class="content">
+        <h2>{{PageTitle}}</h2>

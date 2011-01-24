@@ -1,7 +1,0 @@
-{
-  "env": { 
-    "default": {
-      "db": "http://popcorn:popcorn@localhost:5984/popcorn-dev"
-    }
-  }
-}

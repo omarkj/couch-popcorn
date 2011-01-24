@@ -10,16 +10,16 @@ function(doc, req) {
   
   return Mustache.to_html(template,{
     header: {
-      PageTitle: Config.Title,
-      DatabaseName: Config.DatabaseName
+      PageTitle: doc.title + " ["+doc.language+"]",
+      DatabaseName: Config.Config
     },
     footer: {
       FooterCopyright: Config.Footer.Copyright
     },
-    Title: doc.title,
-    Language: doc.language,
-    Tags: doc.tags,
-    Created: "",
+    tags: doc.tags,
+    Created: doc.date,
+    hasTags: (doc.tags.length > 0),
+    DocPath: Config.DocPath,
     Code: doc.code
   },partials);
 };
